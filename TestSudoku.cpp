@@ -8,11 +8,12 @@
 #include "Sudoku.h"
 
 int main(){
-	Sudoku sudoku(16);
-	sudoku.inputFile("sudoku2.txt");
+	Sudoku sudoku(9);
+	sudoku.inputFile("sudoku1.txt");
+	sudoku.print();
+	cout << endl;
 	if(sudoku.solve()){
-		cout << "Has solution" << endl;
-		sudoku.save("sudokuSolution2.txt");
+		sudoku.save("sudokuSolution1.txt");
 		sudoku.print();
 	}
 

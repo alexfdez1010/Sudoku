@@ -27,11 +27,11 @@ private:
 	usi getSquare(usi r,usi c);
 	usi getRoot(usi n);
 
-	bool isValidNumber(usi r,usi c,usi number,vvb &rows, vvb &cols, vvb &squares);
 	void inputStream(istream &inputStream);
 	void outputStream(ostream &outputStream);
 
 	void updateSelect(vvb &rows, vvb &cols, vvb &squares);
+	void solveEasy(vvb &rows, vvb &cols, vvb &squares);
 	bool solveR(usi r, usi c, vvb &rows, vvb &cols, vvb &squares);
 
 public:

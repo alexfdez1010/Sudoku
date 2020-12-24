@@ -46,7 +46,39 @@ bool Sudoku::solve() {
 	vvb cols(size(),vector<bool>(size(),false));
 	vvb squares(size(),vector<bool>(size(),false));
 	updateSelect(rows,cols,squares);
+	solveEasy(rows,cols,squares);
 	return solveR(0,0,rows,cols,squares);
+}
+
+void Sudoku::solveEasy(vvb &rows, vvb &cols, vvb &squares) {
+	usi i,j,number,count,last,square;
+	bool finish = false;
+	while(!finish){
+		finish = true;
+		for(i = 0;i < size();i++){
+			for(j = 0;j < size();j++){
+				if(matrix[i][j] == 0){
+					count = 0;
+					square = getSquare(i,j);
+					for(number = 1;number <= size();number++){
+						if(!rows[i][number-1] && !cols[j][number-1] && !squares[square][number-1]){
+							count++;
+							last = number;
+						}
+					}
+					if(count == 1){
+						matrix[i][j] = last;
+						rows[i][last-1] = true;
+						cols[j][last-1] = true;
+						squares[square][last-1] = true;
+						finish = false;
+					}
+				}
+
+			}
+		}
+	}
+
 }
 
 void Sudoku::save(string filename) {
@@ -90,6 +122,7 @@ bool Sudoku::solveR(usi r, usi c, vvb &rows, vvb &cols, vvb &squares) {
 	col = (c == size()-1)? 0 : c+1;
 
 	if(matrix[r][c] == 0){
+
 		square = getSquare(r,c);
 
 		for(number = 1;number <= size() && !isSolve;number++){
@@ -145,10 +178,6 @@ void Sudoku::updateSelect(vvb &rows, vvb &cols, vvb &squares) {
 
 void Sudoku::print() {
 	outputStream(cout);
-}
-
-bool Sudoku::isValidNumber(usi r,usi c,usi number,vvb &rows, vvb &cols, vvb &squares) {
-	return rows[r][number-1] && cols[c][number-1] && squares[getSquare(r,c)][number-1];
 }
 
 void Sudoku::inputStream(istream &inputStream) {
