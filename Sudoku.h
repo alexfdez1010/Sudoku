@@ -1,9 +1,10 @@
-/*
- * Sudoku.h
- *
- *  Created on: 24 dic. 2020
- *      Author: alejandro
- */
+//============================================================================
+// Name        : Sudoku.h
+// Author      : Alejandro Fernández Camello
+// Version     : 1.0
+// Copyright   : GPL-3.0
+// Description : General interface of a sudoku that can have different range of numbers
+//============================================================================
 
 #ifndef SUDOKU_H_
 #define SUDOKU_H_
