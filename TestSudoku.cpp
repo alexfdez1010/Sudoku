@@ -1,9 +1,10 @@
-/*
- * TestSudoku.cpp
- *
- *  Created on: 24 dic. 2020
- *      Author: alejandro
- */
+//============================================================================
+// Name        : TestSudoku.cpp
+// Author      : Alejandro Fernández Camello
+// Version     : 1.0
+// Copyright   : GPL-3.0
+// Description : Simple test to check if the algorithms work properly
+//============================================================================
 
 #include "Sudoku.h"
 
