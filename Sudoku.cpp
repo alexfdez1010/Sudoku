@@ -1,9 +1,10 @@
-/*
- * Sudoku.cpp
- *
- *  Created on: 24 dic. 2020
- *      Author: alejandro
- */
+//============================================================================
+// Name        : Sudoku.cpp
+// Author      : Alejandro Fernández Camello
+// Version     : 1.0
+// Copyright   : GPL-3.0
+// Description : General implementation of a sudoku that can have different range of numbers
+//============================================================================
 
 #include "Sudoku.h"
 #include <iostream>
